@@ -10,4 +10,4 @@ export async function middleware(request) {
   if (!user) return NextResponse.redirect(new URL('/login', request.url))
   return res
 }
-export const config = { matcher: ['/anggota/:path*', '/ganti-password/:path*'] }
+export const config = { matcher: ['/dashboard/:path*', '/anggota/:path*', '/ganti-password/:path*'] }

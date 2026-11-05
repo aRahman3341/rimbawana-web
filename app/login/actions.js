@@ -14,6 +14,6 @@ export async function masuk(_prev, fd) {
   if (!a || !a.aktif || !a.email_login) return salah
   const { error } = await createClient().auth.signInWithPassword({ email: a.email_login, password })
   if (error) return salah
-  redirect(a.wajib_ganti_password ? '/ganti-password' : '/anggota')
+  redirect(a.wajib_ganti_password ? '/ganti-password' : '/dashboard')
 }
 export async function keluar() { await createClient().auth.signOut(); redirect('/') }

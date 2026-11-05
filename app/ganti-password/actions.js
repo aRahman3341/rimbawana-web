@@ -11,5 +11,5 @@ export async function gantiPassword(_prev, fd) {
   const { error } = await sb.auth.updateUser({ password: p1 })
   if (error) return { error: error.message }
   await sb.from('anggota').update({ wajib_ganti_password: false }).eq('user_id', user.id)
-  redirect('/anggota')
+  redirect('/dashboard')
 }
